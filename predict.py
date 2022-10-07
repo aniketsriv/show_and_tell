@@ -10,7 +10,7 @@ def predict(model, device, dataset, img):
         [transforms.Resize((299, 299)),
             transforms.ToTensor(),
             transforms.Normalize((0.50, 0.50, 0.50), (0.50, 0.50, 0.50)),]
-                                    )
+                                   )
 
     model.eval()
     test_img = transform(Image.open(img).convert("RGB")).unsqueeze(0)
@@ -19,7 +19,7 @@ def predict(model, device, dataset, img):
 
 transform = transforms.Compose(
         [
-            transforms.Resize((299, 299)),
+            transforms.Resize( (299, 299) ),
             transforms.ToTensor(),
             transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
         ]
